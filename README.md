@@ -34,7 +34,8 @@ This data is sourced from the © Australian Prudential Regulation Authority (APR
 4. The top 3 types of claims that are most frequently filed.
 
 https://public.tableau.com/views/final_17083647313840/Dashboard1?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link
-![Dashboard 1](https://github.com/mhdfandi04/Life-insurance-claims-and-disputes/assets/161302249/f698bee0-b8ed-4c23-b197-f91e2aabc393)
+![Dashboard 1](https://github.com/mhdfandi04/Life-insurance-claims-and-disputes/assets/161302249/8ba901c9-7d18-4ea6-8965-9a8a8cdd53f6)
+
 
 
    
