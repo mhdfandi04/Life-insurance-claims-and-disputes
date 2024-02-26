@@ -32,6 +32,8 @@ This data is sourced from the © Australian Prudential Regulation Authority (APR
 2. The average time taken by companies to settle claims.
 3. The number of disputes filed by consumers regarding claims with the company.
 4. The top 3 types of claims that are most frequently filed.
+
+https://public.tableau.com/views/final_17083647313840/Dashboard1?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link
 ![Dashboard 1](https://github.com/mhdfandi04/Life-insurance-claims-and-disputes/assets/161302249/f698bee0-b8ed-4c23-b197-f91e2aabc393)
 
 
