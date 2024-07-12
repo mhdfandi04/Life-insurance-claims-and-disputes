@@ -33,6 +33,106 @@ This data is sourced from the © Australian Prudential Regulation Authority (APR
 3. The number of disputes filed by consumers regarding claims with the company.
 4. The top 3 types of claims that are most frequently filed.
 
+
+SELECT 
+ reporting_date,
+ count(channel_type),
+ count(category),
+ * FROM life_insurace.claim group by companny_name
+	
+SELECT
+ comppany_name,
+ count(covertype),
+ count(channel_type)
+ FROM claim group by covertype
+
+	
+SELECT 
+ reporting_date,
+ comppany_name,
+ channel_type,
+ category,
+ count(if(category = "Total Claims Received", category, not Null)) as total_claims,
+ count(if (category = "Finalised Claims", category, not Null )) as claim_diselesaikan
+ from claim 
+ group by reporting_date, comppany_name, channel_type,category
+	
+SELECT 
+ reporting_date,
+ comppany_name,
+ covertype,
+ (count(category)  - count(if (category = "Finalised Claims",
+  "Finalised Claims - Admitted", "Finalised Claims - Declined" )) 
+  / (count(category) *100 )) as penerimaan
+  
+ from claim 
+ where category != ""
+ group by reporting_date, category, comppany_name, covertype
+
+comppany_name,
+ covertype,
+ (count(category)  - count(if (category = 'Finalised Claims',
+  'Finalised Claims - Admitted', 'Finalised Claims - Declined' )) 
+  / (count(category) *100 )) as penerimaan
+ from claim 
+ where category != ""
+ group by  category, comppany_name, covertype
+
+	
+SELECT   
+  comppany_name,  
+     channel_type,  
+     covertype, 
+     count(covertype)  
+ FROM claim  
+ where category != ""
+ group by comppany_name,  channel_type,  covertype
+	
+	
+SELECT   
+  company_name,  
+     channel_type,  
+     cover_type,
+     count(cover_type)  
+ FROM disputes  
+ where category != ""
+ group by company_name,  channel_type,  cover_type
+	
+SELECT   
+  comppany_name,  
+     channel_type,  
+     covertype - count(covertype) / count(covertype) *100 as claim 
+ FROM claim  
+ where category != ""
+ group by comppany_name,  channel_type,  covertype
+	
+SELECT   
+  comppany_name,  
+     channel_type,  
+     covertype / count(covertype) *100 as claim 
+ FROM claim  
+ where category != ""
+ group by comppany_name,  channel_type,  covertype
+
+	
+SELECT 
+ comppany_name,
+ covertype,
+ (count(category)  - count(if (category = 'Finalised Claims',
+  'Finalised Claims - Admitted', 'Finalised Claims - Declined' )) 
+  / (count(category) *100 )) as penerimaan
+ from claim 
+ where category != ""
+ group by  category, comppany_name, covertype
+	
+select 
+ reporting_date,
+ channel_type,
+ sum(Valued)
+ from claim
+ where data_item = 'Claims as proportion of finalised'
+ group by channel_type, reporting_date, category
+
 https://public.tableau.com/views/final_17083647313840/Dashboard1?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link
 ![Dashboard 1](https://github.com/mhdfandi04/Life-insurance-claims-and-disputes/assets/161302249/8ba901c9-7d18-4ea6-8965-9a8a8cdd53f6)
 
